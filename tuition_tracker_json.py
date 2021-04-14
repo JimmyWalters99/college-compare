@@ -1,5 +1,14 @@
 import json
 import requests
+import csv
+
+idnumber = dict()
+with open('unitid.csv','r') as f:
+    reader = csv.reader(f)
+    for line in reader:
+        unitid = str(line)
+        print(unitid)
+
 
 url = "https://www.tuitiontracker.org/school.html?unitid=164580"
 
@@ -10,7 +19,8 @@ lat = response["lat"]
 lon = response["lon"]
 
 print(
-    round(tuition["price_instate_oncampus"], 2),
-    round(tuition["avg_net_price_0_30000_titleiv_privateforprofit"], 2),
-    lat, lon
+    # round(tuition["price_instate_oncampus"], 2),
+    # round(tuition["avg_net_price_0_30000_titleiv_privateforprofit"], 2),
+    # lat, lon
+    
 )
