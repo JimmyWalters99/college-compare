@@ -58,7 +58,7 @@ def get_grad_rate(collegename):
 def get_current_temp(collegename):
     lat = get_lat(collegename)
     lon = get_lon(collegename)
-    APIKEY = "2dc51f29cd9c9ea11bce898ebee754a9"
+    
     url = f"http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={APIKEY}"
     f = urllib.request.urlopen(url)
     response_text = f.read().decode("utf-8")
