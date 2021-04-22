@@ -2,7 +2,7 @@ import json
 import requests
 import csv
 import urllib.request
-
+from config import APIKEY
 
 def get_college_info(collegename):
 
@@ -76,16 +76,16 @@ def get_total_enroll(collegename):
 def main():
     collegename1 = 'Babson College'
     collegename2 = "Pennsylvania State University-Main Campus"
-    # print(get_current_temp(collegename))
+    print(get_current_temp(collegename1))
     # print(get_sticker_price(collegename))
     # print(get_acceptance_rate(collegename), "%")
-    print(get_location(collegename1))
-    print(get_grad_rate(collegename1))
-    print(get_total_enroll(collegename1))
+    # print(get_location(collegename1))
+    # print(get_grad_rate(collegename1))
+    # print(get_total_enroll(collegename1))
 
-    print(get_location(collegename2))
-    print(get_grad_rate(collegename2))
-    print(get_total_enroll(collegename2))
+    # print(get_location(collegename2))
+    # print(get_grad_rate(collegename2))
+    # print(get_total_enroll(collegename2))
 
 if __name__ == "__main__":
     main()
