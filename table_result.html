@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lane="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazing App to help students to compare colleges</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>{% first_choice %}</th>
+        <th>Location</th> 
+        <th>Price</th>
+        <th>Acceptance Rate</th>
+        <th>Graduation Rate</th>
+        <th>Current Local Weather</th>
+        <th>Total Enrollment</th>
+        <th>Male Ratio</th>
+        <th>Female Ratio</th>
+        <th>School Website</th>
+      </tr>
+      <tr>
+        {% for cell in info %}
+        <td> {{ cell }} </td>
+        {% endfor %}
+      </tr>
+    </table>
+  </body>
+</html>
