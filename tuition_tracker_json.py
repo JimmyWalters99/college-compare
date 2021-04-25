@@ -158,9 +158,22 @@ def name_check(collegename):
     else:
         return valid
 
+
 def stat_list():
-    res = [private_or_public(),get_location(),get_sticker_price(),get_acceptance_rate(),get_grad_rate(),get_current_weather(),get_total_enroll(),get_male_ratio(),get_female_ratio(),get_website()]
+    res = [
+        private_or_public(),
+        get_location(),
+        get_sticker_price(),
+        get_acceptance_rate(),
+        get_grad_rate(),
+        get_current_weather(),
+        get_total_enroll(),
+        get_male_ratio(),
+        get_female_ratio(),
+        get_website(),
+    ]
     return res
+
 
 def main():
     collegename1 = "Babson College"
