@@ -186,10 +186,10 @@ def main():
     # print(get_grad_rate(collegename1))
     # print(get_total_enroll(collegename1))
 
-    # print(get_location(collegename2))
-    # print(get_grad_rate(collegename2))
-    # print(get_total_enroll(collegename2))
-    # print(get_current_weather(collegename1))
+    print(get_location(collegename2))
+    print(get_grad_rate(collegename2))
+    print(get_total_enroll(collegename2))
+    print(get_current_weather(collegename2))
 
 
 if __name__ == "__main__":
