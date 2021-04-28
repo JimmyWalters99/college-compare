@@ -6,18 +6,44 @@
     <title>Amazing App to help students to compare colleges</title>
   </head>
   <body>
-    <table>
+    <h3 align="center">
+      <font face="Lato" size="7" color="497155">COMPARE</font>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <font face="Lato" size="4">
+        <a href={{ url_for('home') }}>HOME</a>&nbsp;&nbsp;&nbsp;
+        <a href={{ url_for('comparepage') }}>COMPARE</a>&nbsp;&nbsp;&nbsp;           
+        <a href={{ url_for('goal') }}>OUR GOAL</a>&nbsp;&nbsp;&nbsp; 
+        <a href={{ url_for('about') }}>ABOUT US</a>&nbsp;&nbsp;&nbsp;
+      </font>
+  
+  </h3> 
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <table>
       <tr>
-        <th>{% first_choice %}</th>
-        <th>Location</th> 
-        <th>Price</th>
-        <th>Acceptance Rate</th>
-        <th>Graduation Rate</th>
-        <th>Current Local Weather</th>
-        <th>Total Enrollment</th>
-        <th>Male Ratio</th>
-        <th>Female Ratio</th>
-        <th>School Website</th>
+        <th>{{ name1 }}: <th>
+        <th>Type: {{ type1 }} <th>   
+        <th>Location: {{ location1 }}</th> 
+        <th>Price: {{ price1 }}</th>
+        <th>Acceptance Rate: {{ accept_rate1 }}</th>
+        <th>Graduation Rate: {{ grad_rate1 }}</th>
+        <th>Current Local Weather: {{ local_weather1 }}</th>
+        <th>Current Local Temperature: {{ local_temp1 }}</th>
+        <th>Total Enrollment: {{ total_enroll1 }}</th>
+        <th>Male Ratio: {{ male_ratio1 }}</th>
+        <th>Female Ratio: {{ female_ratio1 }}</th>
+        <th>School Website: {{ school_url1 }}</th>
       </tr>
       <tr>
         {% for cell in info %}
@@ -25,5 +51,34 @@
         {% endfor %}
       </tr>
     </table>
+    <br />
+    <br />
+    <br />
+    <br />
+  <br />
+  <br />
+  <br />
+    <table>
+      <tr>
+        <th>{{ name2 }}: <th>
+        <th>Type: {{ type2 }} <th>  
+        <th>Location: {{ location2 }}</th> 
+        <th>Price: {{ price2 }}</th>
+        <th>Acceptance Rate: {{ accept_rate2 }}</th>
+        <th>Graduation Rate: {{ grad_rate2 }}</th>
+        <th>Current Local Weather: {{ local_weather2 }}</th>
+        <th>Current Local Temperature: {{ local_temp2 }}</th>
+        <th>Total Enrollment: {{ total_enroll2 }}</th>
+        <th>Male Ratio: {{ male_ratio2 }}</th>
+        <th>Female Ratio: {{ female_ratio2 }}</th>
+        <th>School Website: {{ school_url2 }}</th>
+      </tr>
+      <tr>
+        {% for cell in info %}
+        <td> {{ cell }} </td>
+        {% endfor %}
+      </tr>
+    </table>
+    <a href={{ url_for('comparepage') }}>Compare again?</a>
   </body>
 </html>

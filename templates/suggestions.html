@@ -5,38 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        College Compare
+        Name Suggestions
     </title>
 </head>
-<body style="background-color:rgb(255, 255, 255);" link="#000" alink="#017bf5" vlink="#000">
-    <h3 align="center"> 
-        <font face="Lato" size="7" color="497155">CC</font>
+<body style="background-color:rgba(152, 141, 248, 0.911);" link="#000" alink="#017bf5" vlink="#000">
+    <h3 align="center">
+        <font face="Lato" size="7" color="497155">COMPARE</font>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <font face="Lato" size="4">
+        <font face="Lato" size="4"> 
             <a href={{ url_for('home') }}>HOME</a>&nbsp;&nbsp;&nbsp;
             <a href={{ url_for('comparepage') }}>COMPARE</a>&nbsp;&nbsp;&nbsp;           
             <a href={{ url_for('goal') }}>OUR GOAL</a>&nbsp;&nbsp;&nbsp; 
             <a href={{ url_for('about') }}>ABOUT US</a>&nbsp;&nbsp;&nbsp;
-        </font>
+        </font> 
     </h3> 
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
-    <h1 >
-        <font face="Lato" size="7"> 
-        <center>WELCOME TO COLLEGE COMPARE</center>
-        </font>
-    </h1> 
-    <br />
-    <h3 align="center"> 
-    <a href={{ url_for('comparepage') }}>
-        <font face="Lato" size="5">Begin Comparing</font>
-    </a>
-    </h3>
-    <p style="text-align:center;"><img src=<p style="text-align:center;"><img src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?cs=srgb&dl=pexels-pixabay-267885.jpg&fm=jpg" alt="students graduating" width="800" height="533" /> 
-    </p>
+    <br /><br /><br /><br /><br /> 
+    <h1>
+        Sorry, one of the names you entered is invalid. Perhaps you meant one of the following: {{suggestions}} 
+        <br />
+        Please try again using one of the above colleges. 
+        <a href={{ url_for('comparepage') }}>Compare again?</a>
+    <h1>
 </body>
 </html>

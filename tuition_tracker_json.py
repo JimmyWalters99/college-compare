@@ -49,7 +49,8 @@ def get_sticker_price(collegename):
     response = get_college_info(collegename)
     tuition = response["yearly_data"][0]
     sticker_price = tuition["price_instate_oncampus"]
-    return sticker_price
+    cleaned = "$" + str(round(sticker_price, 2))
+    return cleaned
 
 
 def get_lat(collegename):
@@ -70,14 +71,16 @@ def get_acceptance_rate(collegename):
     """take a college name and returns the acceptance rate"""
     response = get_college_info(collegename)
     accept = response["enrollment"]["perc_admitted"]
-    return accept
+    cleaned = str(round(accept, 2)) + "%"
+    return cleaned
 
 
 def get_grad_rate(collegename):
     """takes a college name and returns the graduation rate"""
     response = get_college_info(collegename)
     grad_rate = response["yearly_data"][3]["grad_rate_bachelors_6years_total"]
-    return grad_rate
+    cleaned = str(round(grad_rate, 2)) + "%"
+    return cleaned
 
 
 def get_weather_info(collegename):
@@ -96,7 +99,8 @@ def get_current_temp(collegename):
     response = get_weather_info(collegename)
     main_data = response["main"]
     current_temp = main_data["temp"] * 9 / 5 - 459.67
-    return current_temp
+    cleaned = str(round(current_temp, 2)) + "F"
+    return cleaned
 
 
 def get_current_weather(collegename):
@@ -118,7 +122,8 @@ def get_male_ratio(collegename):
     response = get_college_info(collegename)
     male_enroll = response["enrollment"]["total_men"]
     total_enroll = get_total_enroll(collegename)
-    return male_enroll / total_enroll
+    cleaned = str(round((male_enroll / total_enroll) * 100, 2)) + "%"
+    return cleaned
 
 
 def get_female_ratio(collegename):
@@ -126,7 +131,8 @@ def get_female_ratio(collegename):
     response = get_college_info(collegename)
     female_enroll = response["enrollment"]["total_women"]
     total_enroll = get_total_enroll(collegename)
-    return female_enroll / total_enroll
+    cleaned = str(round((female_enroll / total_enroll) * 100, 2)) + "%"
+    return cleaned
 
 
 def get_website(collegename):
@@ -149,47 +155,22 @@ def name_check(collegename):
     for name in namelist:
         if name == collegename:
             valid = True
-    if not valid:
-        suggestions = difflib.get_close_matches(collegename, namelist, 5)
-        if len(suggestions) > 0:
-            return suggestions
-        else:
-            return valid
-    else:
-        return valid
+    return valid
 
 
-def stat_list():
-    res = [
-        private_or_public(),
-        get_location(),
-        get_sticker_price(),
-        get_acceptance_rate(),
-        get_grad_rate(),
-        get_current_weather(),
-        get_total_enroll(),
-        get_male_ratio(),
-        get_female_ratio(),
-        get_website(),
-    ]
-    return res
+def name_suggestion(collegename):
+    with open("unitid.csv", "r") as f:
+        reader = csv.reader(f, delimiter="\t")
+        namelist = []
+        for line in reader:
+            name = line[1]
+            namelist.append(name)
+    suggestions = difflib.get_close_matches(collegename, namelist, 5)
+    return suggestions
 
 
 def main():
-    collegename1 = "Babson College"
-    collegename2 = "Pennsylvania State University-Main Campus"
-    invalidname = ""
-    # print(get_current_temp(collegename1))
-    # print(get_sticker_price(collegename))
-    # print(get_acceptance_rate(collegename), "%")
-    # print(get_location(collegename1))
-    # print(get_grad_rate(collegename1))
-    # print(get_total_enroll(collegename1))
-
-    print(get_location(collegename2))
-    print(get_grad_rate(collegename2))
-    print(get_total_enroll(collegename2))
-    print(get_current_weather(collegename2))
+    print(get_current_weather("Babson College"))
 
 
 if __name__ == "__main__":
