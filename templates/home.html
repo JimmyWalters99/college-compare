@@ -18,10 +18,10 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <font face="Lato" size="4">
-            <a href="home.htm">HOME</a>&nbsp;&nbsp;&nbsp;
-            <a href="compare.htm">COMPARE</a>&nbsp;&nbsp;&nbsp;           
-            <a href="our_goal.htm">OUR GOAL</a>&nbsp;&nbsp;&nbsp; 
-            <a href="about_us.htm">ABOUT US</a>&nbsp;&nbsp;&nbsp;
+            <a href={{ url_for('home') }}>HOME</a>&nbsp;&nbsp;&nbsp;
+            <a href={{ url_for('comparepage') }}>COMPARE</a>&nbsp;&nbsp;&nbsp;           
+            <a href={{ url_for('goal') }}>OUR GOAL</a>&nbsp;&nbsp;&nbsp; 
+            <a href={{ url_for('about') }}>ABOUT US</a>&nbsp;&nbsp;&nbsp;
         </font>
     </h3> 
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
@@ -32,7 +32,7 @@
     </h1> 
     <br />
     <h3 align="center"> 
-    <a href="compare.htm">
+    <a href={{ url_for('comparepage') }}>
         <font face="Lato" size="5">Begin Comparing</font>
     </a>
     </h3>
